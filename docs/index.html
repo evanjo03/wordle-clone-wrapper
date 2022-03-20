@@ -24,19 +24,19 @@
     <script type="module">
       import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.72/dist/components/dialog/dialog.js';
       /*! *****************************************************************************
-          Copyright (c) Microsoft Corporation.
-
-          Permission to use, copy, modify, and/or distribute this software for any
-          purpose with or without fee is hereby granted.
-
-          THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-          REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-          AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-          INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-          LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-          OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-          PERFORMANCE OF THIS SOFTWARE.
-          ***************************************************************************** */ function e(
+      Copyright (c) Microsoft Corporation.
+      
+      Permission to use, copy, modify, and/or distribute this software for any
+      purpose with or without fee is hereby granted.
+      
+      THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+      REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+      AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+      INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+      LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+      OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+      PERFORMANCE OF THIS SOFTWARE.
+      ***************************************************************************** */ function e(
         e,
         s,
         a,
@@ -610,10 +610,10 @@
                           '.' === s[1]
                             ? B
                             : '?' === s[1]
-                            ? I
+                            ? V
                             : '@' === s[1]
                             ? W
-                            : V,
+                            : L,
                       });
                     } else l.push({ type: 6, index: r });
                   }
@@ -671,7 +671,7 @@
           s
         );
       }
-      class D {
+      class G {
         constructor(e, s) {
           (this.v = []), (this._$AN = void 0), (this._$AD = e), (this._$AM = s);
         }
@@ -702,7 +702,7 @@
             if (i === n.index) {
               let s;
               2 === n.type
-                ? (s = new L(t, t.nextSibling, this, e))
+                ? (s = new D(t, t.nextSibling, this, e))
                 : 1 === n.type
                 ? (s = new n.ctor(t, n.name, n.strings, this, e))
                 : 6 === n.type && (s = new K(t, this, e)),
@@ -723,7 +723,7 @@
               s++;
         }
       }
-      class L {
+      class D {
         constructor(e, s, a, o) {
           var r;
           (this.type = 2),
@@ -806,7 +806,7 @@
           )
             this._$AH.m(a);
           else {
-            const e = new D(r, this),
+            const e = new G(r, this),
               s = e.p(this.options);
             e.m(a), this.k(s), (this._$AH = e);
           }
@@ -823,7 +823,7 @@
           for (const r of e)
             o === s.length
               ? s.push(
-                  (a = new L(this.A(z()), this.A(z()), this, this.options))
+                  (a = new D(this.A(z()), this.A(z()), this, this.options))
                 )
               : (a = s[o]),
               a._$AI(r),
@@ -849,7 +849,7 @@
             null === (s = this._$AP) || void 0 === s || s.call(this, e));
         }
       }
-      class V {
+      class L {
         constructor(e, s, a, o, r) {
           (this.type = 1),
             (this._$AH = T),
@@ -896,7 +896,7 @@
             : this.element.setAttribute(this.name, null != e ? e : '');
         }
       }
-      class B extends V {
+      class B extends L {
         constructor() {
           super(...arguments), (this.type = 3);
         }
@@ -904,18 +904,18 @@
           this.element[this.name] = e === T ? void 0 : e;
         }
       }
-      const G = g ? g.emptyScript : '';
-      class I extends V {
+      const I = g ? g.emptyScript : '';
+      class V extends L {
         constructor() {
           super(...arguments), (this.type = 4);
         }
         C(e) {
           e && e !== T
-            ? this.element.setAttribute(this.name, G)
+            ? this.element.setAttribute(this.name, I)
             : this.element.removeAttribute(this.name);
         }
       }
-      class W extends V {
+      class W extends L {
         constructor(e, s, a, o, r) {
           super(e, s, a, o, r), (this.type = 5);
         }
@@ -974,7 +974,7 @@
        * SPDX-License-Identifier: BSD-3-Clause
        */
       var Z, F;
-      null == J || J(R, L),
+      null == J || J(R, D),
         (null !== (m = globalThis.litHtmlVersions) && void 0 !== m
           ? m
           : (globalThis.litHtmlVersions = [])
@@ -1014,7 +1014,7 @@
                   void 0 !== r
                     ? r
                     : null;
-                t._$litPart$ = i = new L(
+                t._$litPart$ = i = new D(
                   s.insertBefore(z(), e),
                   e,
                   void 0,
@@ -16475,13 +16475,19 @@
         constructor() {
           super(...arguments), (this.guesses = []);
         }
+        get lowerCaseGuess() {
+          var e;
+          return null === (e = this.guessValue) || void 0 === e
+            ? void 0
+            : e.toLowerCase();
+        }
         get validGuess() {
           var e, s;
           return (
             5 ===
               (null === (e = this.guessValue) || void 0 === e
                 ? void 0
-                : e.length) && ((s = this.guessValue), te.includes(s))
+                : e.length) && ((s = this.lowerCaseGuess), te.includes(s))
           );
         }
         firstUpdated() {
@@ -16494,7 +16500,7 @@
           var e;
           return U` <div class="container__host"> <fieldset part="field" class="field__host"> <input .value="${
             null !== (e = this.guessValue) && void 0 !== e ? e : ''
-          }" id="guess" part="field-input" class="field__input" onkeydown="return /[a-z]/.test(event.key)" @keyup="${
+          }" id="guess" part="field-input" class="field__input" onkeydown="return /[a-z]/i.test(event.key)" @keyup="${
             this.handleGuessKeyup
           }" @input="${
             this.handleGuessInput
@@ -16536,8 +16542,8 @@
         makeGuess() {
           var e;
           return (
-            (this.guesses = [...this.guesses, this.guessValue]),
-            this.guessValue === this.selectedWord
+            (this.guesses = [...this.guesses, this.lowerCaseGuess]),
+            this.lowerCaseGuess === this.selectedWord
               ? ((this.dialogText = 'Nice work!'), void (this.dialogOpen = !0))
               : 6 ===
                 (null === (e = this.guesses) || void 0 === e
