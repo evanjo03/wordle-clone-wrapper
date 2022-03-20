@@ -10,7 +10,8 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
   nodeResolve: {
     exportConditions: ['browser', 'development'],
   },
-  
+  port: 4000,
+
   /** Compile JS for older browsers. Requires @web/dev-server-esbuild plugin */
   // esbuildTarget: 'auto'
 

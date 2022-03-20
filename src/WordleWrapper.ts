@@ -13,10 +13,8 @@ export class WordleWrapper extends LitElement {
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      font-size: calc(10px + 2vmin);
       max-width: 960px;
       margin: 0 auto;
-      text-align: center;
       background-color: var(--wordle-wrapper-background-color);
     }
 

@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "lit": "^2.0.2",
-    "lit-wordle": "^0.1.1"
+    "lit-wordle": "^1.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
