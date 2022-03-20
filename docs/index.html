@@ -24,19 +24,19 @@
     <script type="module">
       import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.72/dist/components/dialog/dialog.js';
       /*! *****************************************************************************
-      Copyright (c) Microsoft Corporation.
-      
-      Permission to use, copy, modify, and/or distribute this software for any
-      purpose with or without fee is hereby granted.
-      
-      THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-      REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-      AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-      INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-      LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-      OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-      PERFORMANCE OF THIS SOFTWARE.
-      ***************************************************************************** */ function e(
+            Copyright (c) Microsoft Corporation.
+
+            Permission to use, copy, modify, and/or distribute this software for any
+            purpose with or without fee is hereby granted.
+
+            THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+            REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+            AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+            INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+            LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+            OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+            PERFORMANCE OF THIS SOFTWARE.
+            ***************************************************************************** */ function e(
         e,
         s,
         a,
@@ -16522,8 +16522,16 @@
           }"> OK </button> </div> </div> </sl-dialog> `;
         }
         handleGuessInput(e) {
-          const s = e.composedPath()[0];
-          this.guessValue = null == s ? void 0 : s.value;
+          var s, a;
+          const o = e.composedPath()[0];
+          this.guessValue =
+            null !==
+              (a =
+                null === (s = null == o ? void 0 : o.value) || void 0 === s
+                  ? void 0
+                  : s.slice(0, 5)) && void 0 !== a
+              ? a
+              : '';
         }
         handleGuessClick() {
           this.makeGuess();
