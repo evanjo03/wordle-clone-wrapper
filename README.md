@@ -5,3 +5,5 @@
 Wordle clone repository: https://github.com/evanjo03/wordle-clone
 
 NPM: https://www.npmjs.com/package/lit-wordle
+
+Deployed: https://evanjo03.github.io/wordle-clone-wrapper/
